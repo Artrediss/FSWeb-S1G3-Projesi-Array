@@ -166,9 +166,9 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(dizi,a){
+function ismeGoreCesitCikar(dizi,cikanLezzet){
 
-  let i = dizi.indexOf(a);
+  let i = dizi.indexOf(cikanLezzet);
 
   dizi.splice(i,1);
 
@@ -176,7 +176,7 @@ return dizi;
  
 }
 
- console.log(ismeGoreCesitCikar());
+  // console.log(ismeGoreCesitCikar(orijinalTatlar,"Vanilya"));
 
 /* Görev 7:
 
@@ -199,12 +199,25 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreFiltrele(dizi,filtre){
+
+  let result =[]
+
+  for(let i=0; i < dizi.length; i++){
+
+    if(dizi[i].includes(filtre) ){
+
+result.push(dizi[i]);
+
+    }
+  }
+
+  return result;
 }
 
-
-
+console.log(ismeGoreFiltrele(orijinalTatlar,"çın"))
+ console.log(orijinalTatlar[5]);
+ 
 /* ALIŞTIRMA */
 
 /* ALIŞTIRMA 1: Bir dizideki ortalama kelime sayısını döndüren bir fonksiyon yazın. Bu işlevi orijinalTatlar dizisinde test etmelisiniz, ancak bunu herhangi bir dizi için de kullanabilmelisiniz.
