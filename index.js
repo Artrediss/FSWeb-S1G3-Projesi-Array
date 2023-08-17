@@ -33,6 +33,7 @@ const orijinalTatlar = [
 Orijinal tatların bulunduğu toplam 25 aromanın olduğu bir dizimiz var (yukarıya bakın). Bu görevde, bu dizi'ye veri yazma ve bu diziden veri okuma işlemleri yapacağız.
 Tüm bu değişiklikleri yaparken, gerçek, orijinal 25 lezzetin listesini kaybetmek istemiyoruz. Bu yüzden orijinal diziyi kopyalamamız gerekmektedir!
 
+
 /*
 Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
    1. parametre olarak bir dizi alın - işlev çağrıldığında orijinalTatlar'i argüman olarak ileteceksiniz.
@@ -40,9 +41,16 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+function kopyala(dizi){
+
+let yeniDizi = [...dizi]
+
+return yeniDizi
+
 }
+
+console.log(kopyala(orijinalTatlar));
+
 
 
 /* Görev 2:
@@ -56,9 +64,23 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
-}
+function dizi25Cesitmi(dizi){
+  
+  if( dizi.length == 25){
+
+    return true
+
+    
+    }  else {
+
+      return false
+                         
+    }
+
+
+  }
+
+ // console.log(dizi25Cesitmi(orijinalTatlar));
 
 
 /* Görev 3:
@@ -74,9 +96,16 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(dizi,yeniTat){
+  
+  dizi.unshift(yeniTat)
+
+return dizi;
+
 }
+
+// console.log(cesitEkle(orijinalTatlar,"kakule"))
+
 
 
 /* Cörev 4:
@@ -92,9 +121,15 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(dizi){
+
+dizi.pop();
+
+return dizi;
+
 }
+
+//console.log(sonCesitiKaldir(orijinalTatlar))
 
 
 /* Görev 5:
@@ -108,9 +143,12 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
+function indekstekiCesitiGetir(dizi, i){
+  
+  return dizi[i];
 }
+
+ // console.log(indekstekiCesitiGetir(orijinalTatlar,2))
 
 
 /* Görev 6:
@@ -128,10 +166,17 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(dizi,a){
+
+  let i = dizi.indexOf(a);
+
+  dizi.splice(i,1);
+
+return dizi;
+ 
 }
 
+ console.log(ismeGoreCesitCikar());
 
 /* Görev 7:
 
